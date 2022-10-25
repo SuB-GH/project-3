@@ -1,25 +1,12 @@
 import React, {useState} from "react"
-import Nav from './components/Nav'
-import About from './components/About'
+import ReactDom from 'react-dom'
+import './index.css'
+import app from './App'
 
-function App(){
-    const [categories] = useState([
-        {
-            name: ""
-        }
-    ])
+ReactDom.render(
+    <React.StrictMode>
+    <App />
+    </React.StrictMode>,
+    document.getElementById('root')  
+)
 
-    //const
-
-    return (
-        <div>
-            <Header>
-
-            </Header>
-            <main>
-
-            </main>
-            <Footer />
-        </div>
-    )
-}
