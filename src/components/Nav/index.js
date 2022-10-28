@@ -11,8 +11,10 @@ function Nav(props){
 
             </nav>
             <ul>
-                
+
             </ul>
         </header>
     )
 }
+
+export default Nav
