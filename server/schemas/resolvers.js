@@ -1,9 +1,12 @@
 const resolvers = {
     Query: {
-        helloWisconsin: () => {
-        return 'Hello Wisconsin!';
+      id: ID
+      subject: String
       }
-    }
+    
   };
   
   module.exports = resolvers;
+
+
+ 
