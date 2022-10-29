@@ -3,6 +3,7 @@ import React, {useState} from "react"
 import About from './components/About'
 // import logo from './logo.svg';
 import Books from './components/Books'
+import Contact from './components/Contact'
 import './App.css';
 
 function App(){
@@ -19,6 +20,7 @@ function App(){
         <main>
           <About></About>
           <Books></Books>
+          <Contact></Contact>
         </main>
       </div>
     );
