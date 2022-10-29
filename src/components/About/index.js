@@ -9,7 +9,7 @@ function About() {
             <div class="relative lg:max-w-[410px] w-full">
                 <h1  class="text 2xl md:text-3xl lg:text-4xl font-bold tracking-wider text-amber-600" id="about">Inspired Travels</h1>
                 <img src={coverImage} style={{ width: "100%" }} alt="cover" />
-                <input placeholder="search" class="p-4 py-3 outline-none focus pr-10 bg-gray-100 border rounded border-gray-100 text-slate-600 lg:max-w-[410px] w-full leading-4">
+                <input placeholder="Search for a Location" class="p-4 py-3 outline-none focus pr-10 bg-gray-100 border rounded border-gray-100 text-slate-600 lg:max-w-[410px] w-full leading-4">
                 </input>
                 <button class="bg-amber-600 text-white lg:max-w-[164px] font-medium px-6 py-4 w-full rounded-[4px] leading-[14px] hover:bg-amber-600">Search
                 </button>

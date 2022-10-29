@@ -44,22 +44,22 @@ function Contact() {
                             <form class="w-full 2xl:w-8/12 mt-3" onSubmit={handleSubmit}>
                                 <div class="mt-4 md:mt-8">
                                     <label lass="text-gray-800 dark:text-white text-base font-medium">Name: </label>
-                                    <input class="mt-3 text-base border-2 w-11/12 lg:w-full xl:w-10/12 hover:border-amber-600 focus:border-amber-600 focus:outline-none border-black py-5 pl-4 text-amber-600" type="text" name="formname"/>
+                                    <input class="p-4 py-3 outline-none focus pr-10 bg-gray-100 border rounded border-gray-100 text-slate-600 lg:max-w-[410px] w-full leading-4"type="text" name="formname"/>
                                 </div>
                                 <div class="mt-4 md:mt-8">
                                     <label lass="text-gray-800 dark:text-white text-base font-medium">Email:  </label>
-                                    <input class="mt-3 text-base border-2 w-11/12 lg:w-full xl:w-10/12 hover:border-amber-600 focus:border-amber-600 focus:outline-none border-black py-5 pl-4 text-amber-600" type="email" name="formname"/>
+                                    <input class="p-4 py-3 outline-none focus pr-10 bg-gray-100 border rounded border-gray-100 text-slate-600 lg:max-w-[410px] w-full leading-4"type="email" name="formname"/>
                                 </div>
                                 <div class="mt-4 md:mt-8">
                                     <label lass="text-gray-800 dark:text-white text-base font-medium">Message: </label>
-                                    <input class="mt-3 text-base  border-2 w-11/12 lg:w-full xl:w-10/12 hover:border-amber-600 focus:border-amber-600 focus:outline-none border-black py-5 pl-4 text-amber-600 " type="text" name="formname"/>
+                                    <input class="p-4 py-3 outline-none focus pr-10 bg-gray-100 border rounded border-gray-100 text-slate-600 lg:max-w-[410px] w-full leading-4"type="text" name="formname"/>
                                 </div>
                                 {errorMessage && (
                                     <div> 
                                         <p name='formerror'>{errorMessage}</p>
                                     </div>
                                 )}
-                                <button class="py-3 md:py-5 border-3 dark:bg-white border-5 dark:text-gray-800 px-5 md:px-10 bg-gray-900 text-white hover:opacity-90 ease-in duration-150 text-sm md:text-lg tracking-wider font-semibold focus:border-4 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" type='formsubmit'>Submit</button>
+                                <button class="bg-amber-600 text-white lg:max-w-[164px] font-medium px-6 py-4 w-full rounded-[4px] leading-[14px] hover:bg-amber-600"type='formsubmit'>Submit</button>
                             </form>
                         </div>
                     </section>
