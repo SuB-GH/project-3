@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import About from './components/About'
 import Books from './components/Books'
@@ -54,6 +54,7 @@ function App() {
   const [otherSelected, setOtherSelected] = useState('Search')
 
   return (
+    <ApolloProvider client={client}>
     <div className="App">
       <Header
         otherSelected={otherSelected}
@@ -77,7 +78,10 @@ function App() {
 
       </main>
       <Footer></Footer>
+
+      
     </div>
+    </ApolloProvider>
   );
 }
 
