@@ -1,11 +1,11 @@
 const resolvers = {
-    Query: {
-      id: ID
-      subject: String
-      }
-    
-  };
-  
+  Query: {
+    books: async () => {
+      return http://openlibrary.org/search.json?q=
+    }
+  }
+};
+
   module.exports = resolvers;
 
 
