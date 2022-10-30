@@ -1,27 +1,31 @@
-import React, {useState} from "react"
+import React from "react"
 // import Nav from './components/Nav'
 import About from './components/About'
 // import logo from './logo.svg';
 import Books from './components/Books'
-import './App.css';
+import ContactForm from "./components/Contact";
 
-function App(){
-    const [categories] = useState([
-        {name: "books"},
-        {name: "articles"}
-    ])
 
-    const [currentCategory, setCurrentCategory] = useState(categories[0])
+function App() {
+  // const [categories] = useState([
+  //   { name: "books" },
+  //   { name: "articles" }
+  // ])
 
-    //const
-    return (
-      <div>
-        <main>
-          <About></About>
-          <Books></Books>
-        </main>
-      </div>
-    );
+  // const [currentCategory, setCurrentCategory] = useState(categories[0])
+
+  // const
+  return (
+
+    <div>
+      <h1>handleSubmit</h1> 
+      <main>
+        <ContactForm></ContactForm>
+        <About></About>
+        <Books></Books>
+      </main>
+    </div>
+  );
 }
 
 
