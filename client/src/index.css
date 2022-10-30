@@ -16,3 +16,55 @@ code {
     monospace;
 }
 
+.App {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Header and Nav Styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 10%;
+  background-color: royalblue;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.title {
+  margin-bottom: 0px;
+  font-size: 52px;
+  color: white
+}
+
+.under-title {
+  margin-top: 0px;
+  font-size: 24px;
+  color: white
+}
+
+header nav {
+  margin-right: 40px;
+  width: 70%;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  color: white
+}
+
+nav ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+/* Footer Styles */

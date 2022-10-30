@@ -5,6 +5,8 @@ import Books from './components/Books'
 import Contact from "./components/Contact";
 import Footer from './components/Footer'
 import Page from "./components/Page";
+import SignupForm from './components/Signup/SignupForm'
+import LoginForm from "./components/Signup/LoginForm";
 
 
 function App() {
@@ -19,19 +21,24 @@ function App() {
 
   return (
     <div className="App">
-      <Header 
-        otherSelected={ otherSelected }
-        setOtherSelected={ setOtherSelected }
+      <Header
+        otherSelected={otherSelected}
+        setOtherSelected={setOtherSelected}
       ></Header>
       <main>
-      {otherSelected === 'About' ? (
+        {otherSelected === 'About' ? (
           <About></About>
         ) : otherSelected === 'Contact' ? (
           <Contact></Contact>
         ) : otherSelected === 'Books' ? (
           <Books></Books>
-        ) : (
+        ) : otherSelected === 'Page' ? (
           <Page></Page>
+        ) : (
+          <div>
+          <SignupForm></SignupForm>
+          <LoginForm></LoginForm>
+          </div>
         )}
 
       </main>

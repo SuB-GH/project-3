@@ -7,7 +7,8 @@ function Nav(props) {
     { name: 'About' },
     { name: 'Contact' },
     { name: 'Books' },
-    { name: 'Page' }
+    { name: 'Page' },
+    { name: 'Sign Up'}
   ]);
 
   const { setOtherSelected, otherSelected } = props
