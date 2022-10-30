@@ -1,9 +1,10 @@
-import React from "react"
-// import Nav from './components/Nav'
+import React, { useState } from "react"
+import Header from './components/Header'
 import About from './components/About'
-// import logo from './logo.svg';
 import Books from './components/Books'
-import ContactForm from "./components/Contact";
+import Contact from "./components/Contact";
+import Footer from './components/Footer'
+import Page from "./components/Page";
 
 
 function App() {
@@ -14,16 +15,27 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  // const
-  return (
+  const [otherSelected, setOtherSelected] = useState('About')
 
-    <div>
-      <h1 className="underline">handleSubmit</h1> 
+  return (
+    <div className="App">
+      <Header 
+        otherSelected={ otherSelected }
+        setOtherSelected={ setOtherSelected }
+      ></Header>
       <main>
-        <ContactForm></ContactForm>
-        <About></About>
-        <Books></Books>
+      {otherSelected === 'About' ? (
+          <About></About>
+        ) : otherSelected === 'Contact' ? (
+          <Contact></Contact>
+        ) : otherSelected === 'Books' ? (
+          <Books></Books>
+        ) : (
+          <Page></Page>
+        )}
+
       </main>
+      <Footer></Footer>
     </div>
   );
 }

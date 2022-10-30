@@ -1,20 +1,35 @@
-import React, {useEffect} from 'react'
+import React, { useState } from 'react';
+import Contact from '../Contact';
 
-function Nav(props){
-    const {
-        content = [],
-    } = props
+function Nav(props) {
 
-    return (
-        <header className="">
-            <nav>
+  const [navItems] = useState([
+    { name: 'About' },
+    { name: 'Contact' },
+    { name: 'Books' },
+    { name: 'Page' }
+  ]);
 
-            </nav>
-            <ul>
+  const { setOtherSelected, otherSelected } = props
 
-            </ul>
-        </header>
-    )
+  const [currentNavItem, setCurrentNavItem] = useState(navItems[0])
+
+  return (
+    <nav>
+      <ul>
+        {navItems.map((category) => (
+          <li className={`${currentNavItem.name === category.name && 'active'}`} key={category.name}>
+            <span onClick={() => {
+              setCurrentNavItem(category)
+              setOtherSelected(category.name)
+            }}>
+              {category.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
 }
 
-export default Nav
+export default Nav;

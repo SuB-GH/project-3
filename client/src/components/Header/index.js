@@ -8,8 +8,8 @@ const { setOtherSelected, otherSelected} = props
   return (
     <header>
       <div className='headerContent'>
-        <h1 className='title'>Jonathan Thompson</h1>
-        <p className='underTitle'>Full Stack Web Developer</p>
+        <h1 className='title'>Inspired Travels</h1>
+        <p className='underTitle'>Let us help you a book for your travels!</p>
       </div>
       <Nav
       setOtherSelected={setOtherSelected}
