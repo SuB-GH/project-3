@@ -42,13 +42,13 @@ header {
 .title {
   margin-bottom: 0px;
   font-size: 52px;
-  color: white
+  color: whitesmoke;
 }
 
 .under-title {
   margin-top: 0px;
   font-size: 24px;
-  color: white
+  color: whitesmoke;
 }
 
 header nav {
@@ -60,12 +60,16 @@ header nav ul {
   display: flex;
   justify-content: space-between;
   font-size: 25px;
-  color: white
+  color: whitesmoke;
 }
 
 nav ul li {
   list-style: none;
   cursor: pointer;
+}
+
+.active {
+  color: black;
 }
 
 /* About Styles */
@@ -93,7 +97,7 @@ footer {
 
 .contact-info p {
   font-size: 25px;
-  color: white;
+  color: whitesmoke;
 }
 
 .icon {
