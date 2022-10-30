@@ -72,6 +72,10 @@ nav ul li {
   color: black;
 }
 
+/* Search Styles */
+
+/* Books Styles */
+
 /* About Styles */
 
 .about {
@@ -88,8 +92,8 @@ nav ul li {
 }
 
 .about-container h2 {
-    font-size: 100px;
-    margin-top: 100px;
+  font-size: 100px;
+  margin-top: 100px;
 }
 
 .about-container p {
@@ -99,13 +103,69 @@ nav ul li {
   margin-left: 200px;
 }
 
+/* Contact Styles */
+
+.contact-card {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.contact-card h1 {
+  font-size: 50px;
+}
+
+.contact-form {
+  text-align: center;
+  font-size: 24px;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+input[type=text],
+textarea {
+  width: 120vh;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: both;
+}
+
+button[type=submit] {
+  background-color: royalblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit:hover {
+  color: black;
+}
+
 /* Footer Styles */
 
 footer {
- margin-top: auto;
- text-align: center;
- background-color: royalblue;
- min-height: 15vh;
+  text-align: center;
+  background-color: royalblue;
+  min-height: 15vh;
+  position: absolute;
+  width: 100%;
 }
 
 .footer-container {
@@ -114,7 +174,7 @@ footer {
   justify-content: space-evenly;
 }
 
-.contact-info p {
+.github {
   font-size: 25px;
   color: whitesmoke;
 }

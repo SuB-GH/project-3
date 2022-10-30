@@ -4,10 +4,10 @@ import Contact from '../Contact';
 function Nav(props) {
 
   const [navItems] = useState([
+    { name: 'Page' },
+    { name: 'Books' },
     { name: 'About' },
     { name: 'Contact' },
-    { name: 'Books' },
-    { name: 'Page' },
     { name: 'Sign Up'}
   ]);
 

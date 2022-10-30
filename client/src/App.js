@@ -17,7 +17,7 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  const [otherSelected, setOtherSelected] = useState('About')
+  const [otherSelected, setOtherSelected] = useState('Contact')
 
   return (
     <div className="App">
@@ -26,14 +26,14 @@ function App() {
         setOtherSelected={setOtherSelected}
       ></Header>
       <main>
-        {otherSelected === 'About' ? (
-          <About></About>
-        ) : otherSelected === 'Contact' ? (
-          <Contact></Contact>
+        {otherSelected === 'Page' ? (
+          <Page></Page>
         ) : otherSelected === 'Books' ? (
           <Books></Books>
-        ) : otherSelected === 'Page' ? (
-          <Page></Page>
+        ) : otherSelected === 'Contact' ? (
+          <Contact></Contact>
+        ) : otherSelected === 'About' ? (
+          <About></About>
         ) : (
           <div>
           <SignupForm></SignupForm>
