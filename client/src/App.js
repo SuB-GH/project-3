@@ -4,7 +4,7 @@ import About from './components/About'
 import Books from './components/Books'
 import Contact from "./components/Contact";
 import Footer from './components/Footer'
-import Page from "./components/Page";
+import Search from "./components/Search";
 import SignupForm from './components/Signup/SignupForm'
 import LoginForm from "./components/Signup/LoginForm";
 
@@ -17,7 +17,7 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  const [otherSelected, setOtherSelected] = useState('Contact')
+  const [otherSelected, setOtherSelected] = useState('Search')
 
   return (
     <div className="App">
@@ -26,18 +26,18 @@ function App() {
         setOtherSelected={setOtherSelected}
       ></Header>
       <main>
-        {otherSelected === 'Page' ? (
-          <Page></Page>
+        {otherSelected === 'Search' ? (
+          <Search></Search>
         ) : otherSelected === 'Books' ? (
           <Books></Books>
         ) : otherSelected === 'Contact' ? (
           <Contact></Contact>
-        ) : otherSelected === 'About' ? (
+        ) : otherSelected === 'About Us' ? (
           <About></About>
         ) : (
           <div>
-          <SignupForm></SignupForm>
-          <LoginForm></LoginForm>
+            <SignupForm></SignupForm>
+            <LoginForm></LoginForm>
           </div>
         )}
 

@@ -9,7 +9,7 @@ function Header(props) {
     <header>
         <div className='title-container'>
           <h1 className='title'>Inspired Travels</h1>
-          <h3 className='under-title'>Let us help you a book for your travels!</h3>
+          <h3 className='under-title'>Let us help you find a book for your travels!</h3>
         </div>
         <Nav
           setOtherSelected={setOtherSelected}
