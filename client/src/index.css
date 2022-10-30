@@ -18,6 +18,7 @@ code {
 
 .App {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-height: 100vh;
 }
 
 /* Header and Nav Styles */
@@ -67,4 +68,35 @@ nav ul li {
   cursor: pointer;
 }
 
+/* About Styles */
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Footer Styles */
+
+footer {
+ margin-top: auto;
+ text-align: center;
+ background-color: royalblue;
+ min-height: 15vh;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.contact-info p {
+  font-size: 25px;
+  color: white;
+}
+
+.icon {
+  font-size: 50px;
+  color: black;
+}

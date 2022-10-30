@@ -3,7 +3,7 @@ import coverImage from "../../assets/cover-image.jpg";
 
 function About() {
   return (
-    <section>
+    <section className='about'>
       <img src={coverImage} style={{ width: "100%" }} alt="cover" />
       <div className="cover-info">
         <p>
