@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import About from './components/About'
 import Books from './components/Books'
@@ -8,6 +10,38 @@ import Search from "./components/Search";
 import SignupForm from './components/Signup/SignupForm'
 import LoginForm from "./components/Signup/LoginForm";
 
+// apollo imports
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+
+// graph ql http link
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+
+// apolo client call
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   // const [categories] = useState([
