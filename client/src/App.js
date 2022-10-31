@@ -10,6 +10,8 @@ import Search from "./components/Search";
 import SignupForm from './components/Signup/SignupForm'
 import LoginForm from "./components/Signup/LoginForm";
 
+import SearchBooks from "./pages/Search";
+
 // apollo imports
 import {
   ApolloClient,
