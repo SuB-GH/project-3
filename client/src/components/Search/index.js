@@ -30,9 +30,9 @@ function Search() {
           throw new Error('Something went wrong!');
         }
   
-        const { items } = await response.json();
+        const  items  = await response.json()
         console.log(items);
-        console.log(searchInput);
+
   
         const bookData = items.map((book) => ({
           bookId: book.key,
