@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String!
     bookCount: Int
     savedBooks: [Book]
+    savedNews: [News]
   }
 
   type Auth {
@@ -23,6 +24,15 @@ const typeDefs = gql`
     link: String
   }
 
+  type News {
+    source: String
+    author: String
+    title: String
+    description: String
+    image: String
+    url: String
+  }
+
   input InputBook {
     bookId: String
     authors: [String]
@@ -30,6 +40,15 @@ const typeDefs = gql`
     description: String
     image: String
     link: String
+  }
+
+  input InputNews {
+    source: String
+    author: String
+    title: String
+    description: String
+    image: String
+    url: String
   }
 
   type Query {
@@ -41,6 +60,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(newBook: InputBook!): User
     removeBook(bookId: ID!): User
+    saveNews(newNews: InputNews!): User
+    removeNews(source: String): User
   }
   
 `;
