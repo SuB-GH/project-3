@@ -41,7 +41,7 @@ const LoginForm = () => {
         variables: { ...userFormData }
       });
 
-      //Auth.login(data.login.token);
+      Auth.login(data.login.token);
 
     } catch (err) {
       console.error(err);
@@ -85,25 +85,25 @@ const LoginForm = () => {
     }
   };
   return (
-    // <form>
-    //   <div className='login-card'>
-    //     <h3>Log-In</h3>
-    //     <div className='login-section'>
-    //       <label htmlFor="email">Email address:</label>
-    //       <input type="login" name="email" defaultValue={email} onBlur={handleChange}/>
-    //     </div>
-    //     <div className='login-section'>
-    //       <label htmlFor="password">Password:</label>
-    //       <input type="login" name="password" defaultValue={email} onBlur={handleChange}/>
-    //     </div>
-    //     {errorMessage && (
-    //           <div>
-    //             <p className="error-text">{errorMessage}</p>
-    //           </div>
-    //         )}
-    //     <button data-testid="button" type="submit" className='submit'>Submit</button>
-    //   </div>
-    // </form>
+    <form>
+      <div className='login-card'>
+        <h3>Log-In</h3>
+        <div className='login-section'>
+          <label htmlFor="email">Email address:</label>
+          <input type="login" name="email" defaultValue={email} onBlur={handleChange}/>
+        </div>
+        <div className='login-section'>
+          <label htmlFor="password">Password:</label>
+          <input type="login" name="password" defaultValue={email} onBlur={handleChange}/>
+        </div>
+        {errorMessage && (
+              <div>
+                <p className="error-text">{errorMessage}</p>
+              </div>
+            )}
+        <button data-testid="button" type="submit" className='submit'>Submit</button>
+      </div>
+    
     <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
@@ -142,7 +142,9 @@ const LoginForm = () => {
         </Button>
       </Form>
     </>
+    </form>
   );
+  
 };
 
 export default LoginForm;
