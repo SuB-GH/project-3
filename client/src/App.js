@@ -9,7 +9,7 @@ import Search from "./components/Search";
 import SignupForm from './components/Signup/SignupForm'
 import LoginForm from "./components/Signup/LoginForm";
 
-import SearchBooks from "./pages/Search";
+// import SearchBooks from "./pages/Search";
 
 // apollo imports
 import {
@@ -52,7 +52,7 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  const [otherSelected, setOtherSelected] = useState('Sign Up')
+  const [otherSelected, setOtherSelected] = useState('Search')
 
   return (
     <ApolloProvider client={client}>

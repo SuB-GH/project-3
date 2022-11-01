@@ -112,6 +112,11 @@ nav ul li {
   resize: both;
 }
 
+.book-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
 
 /* Books Styles */

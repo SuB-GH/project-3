@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 function Search() {
@@ -42,14 +42,11 @@ function Search() {
         console.error(err);
       }
     };
-
-  
   return (
-
     <>
     <Jumbotron fluid className='text-light bg-dark search-container'>
       <Container>
-        <h1 className='container-title'>Search for Books!</h1>
+        <h1 className='container-title'>Search Your Destination!</h1>
         <Form onSubmit={handleFormSubmit} className='search-section'>
           <Form.Row>
             <Col xs={12} md={8}>
@@ -73,16 +70,16 @@ function Search() {
     </Jumbotron>
 
     
-    <CardColumns>
+    <CardColumns className='book-card'>
           {searchedBooks.map((book) => {
             return (
               <Card key={book.bookId} border='dark'>
-                {book.image ? (
-                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+                {book.cover_i ? (
+                  <Card.Img src={book.cover_i} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
+                  <p className='small'>Written By: {book.authors[0]}</p>
                   <Card.Text>{book.description}</Card.Text>
                  
                 </Card.Body>
@@ -91,11 +88,6 @@ function Search() {
           })}
         </CardColumns>
   </>
-
-
-
-
-    
   )
 }
 
