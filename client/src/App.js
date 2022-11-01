@@ -3,12 +3,13 @@ import React, { useState } from "react"
 //import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import About from './components/About'
-import Books from './components/Books'
 import Contact from "./components/Contact";
 import Footer from './components/Footer'
 import Search from "./components/Search";
 import SignupForm from './components/Signup/SignupForm'
 import LoginForm from "./components/Signup/LoginForm";
+
+// import SearchBooks from "./pages/Search";
 
 // apollo imports
 import {
@@ -51,7 +52,7 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  const [otherSelected, setOtherSelected] = useState('Sign Up')
+  const [otherSelected, setOtherSelected] = useState('Search')
 
   return (
     <ApolloProvider client={client}>
@@ -63,8 +64,6 @@ function App() {
       <main>
         {otherSelected === 'Search' ? (
           <Search></Search>
-        ) : otherSelected === 'Books' ? (
-          <Books></Books>
         ) : otherSelected === 'Contact' ? (
           <Contact></Contact>
         ) : otherSelected === 'About Us' ? (
