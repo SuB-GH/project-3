@@ -63,10 +63,10 @@ const SignupForm = () => {
   //     password: '',
   //   });
   // };
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [formState, setFormState] = useState({ email: '', password: '' });
 
   const [errorMessage, setErrorMessage] = useState('');
-  const { name, email, message } = formState;
+  const { email, password } = formState;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -105,11 +105,11 @@ const SignupForm = () => {
         </div>
         <div className='login-section'>
           <label htmlFor="password">Password:</label>
-          <input type="login" name="password" defaultValue={email} onBlur={handleChange}/>
+          <input type="login" name="password" defaultValue={password} onBlur={handleChange}/>
         </div>
         <div className='login-section'>
           <label htmlFor="password">Confirm Password:</label>
-          <input type="login" name="password" defaultValue={email} onBlur={handleChange}/>
+          <input type="login" name="password" defaultValue={password} onBlur={handleChange}/>
         </div>
         {errorMessage && (
               <div>
