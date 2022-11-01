@@ -5,7 +5,6 @@ function Nav(props) {
 
   const [navItems] = useState([
     { name: 'Search' },
-    { name: 'Books' },
     { name: 'About Us' },
     { name: 'Contact' },
     { name: 'Sign Up'}

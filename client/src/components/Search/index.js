@@ -47,10 +47,10 @@ function Search() {
   return (
 
     <>
-    <Jumbotron fluid className='text-light bg-dark'>
+    <Jumbotron fluid className='text-light bg-dark search-container'>
       <Container>
-        <h1>Search for Books!</h1>
-        <Form onSubmit={handleFormSubmit}>
+        <h1 className='container-title'>Search for Books!</h1>
+        <Form onSubmit={handleFormSubmit} className='search-section'>
           <Form.Row>
             <Col xs={12} md={8}>
               <Form.Control

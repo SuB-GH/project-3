@@ -3,7 +3,6 @@ import React, { useState } from "react"
 //import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import About from './components/About'
-import Books from './components/Books'
 import Contact from "./components/Contact";
 import Footer from './components/Footer'
 import Search from "./components/Search";
@@ -65,8 +64,6 @@ function App() {
       <main>
         {otherSelected === 'Search' ? (
           <Search></Search>
-        ) : otherSelected === 'Books' ? (
-          <Books></Books>
         ) : otherSelected === 'Contact' ? (
           <Contact></Contact>
         ) : otherSelected === 'About Us' ? (
