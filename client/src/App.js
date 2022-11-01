@@ -53,7 +53,7 @@ function App() {
 
   // const [currentCategory, setCurrentCategory] = useState(categories[0])
 
-  const [otherSelected, setOtherSelected] = useState('Search')
+  const [otherSelected, setOtherSelected] = useState('Sign Up')
 
   return (
     <ApolloProvider client={client}>
@@ -72,9 +72,9 @@ function App() {
         ) : otherSelected === 'About Us' ? (
           <About></About>
         ) : (
-          <div>
-            <SignupForm></SignupForm>
+          <div className="form-container">
             <LoginForm></LoginForm>
+            <SignupForm></SignupForm>
           </div>
         )}
 
