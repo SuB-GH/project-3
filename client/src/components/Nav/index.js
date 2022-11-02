@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Contact from '../Contact';
 
 function Nav(props) {
 
@@ -10,7 +9,7 @@ function Nav(props) {
     { name: 'Sign Up'}
   ]);
 
-  const { setOtherSelected, otherSelected } = props
+  const { setOtherSelected } = props
 
   const [currentNavItem, setCurrentNavItem] = useState(navItems[0])
 

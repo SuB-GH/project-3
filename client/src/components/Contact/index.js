@@ -38,8 +38,7 @@ function Contact() {
     <section>
       <div className='contact-card'>
         <h1 data-testid="h1tag">Contact Us</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="contact-form">
+        <form onSubmit={handleSubmit} className="contact-form">
             <div className='contact-section'>
               <label htmlFor="name">Name:</label>
               <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
@@ -50,7 +49,7 @@ function Contact() {
             </div>
             <div className='contact-section'>
               <label htmlFor="message">Message:</label>
-              <textarea name="message" rows="10" defaultValue={message} onBlur={handleChange} />
+              <textarea id='form-textbox' name="message" rows="10" defaultValue={message} onBlur={handleChange} />
             </div>
             {errorMessage && (
               <div>
@@ -58,7 +57,6 @@ function Contact() {
               </div>
             )}
             <button data-testid="button" type="submit" className='submit'>Submit</button>
-          </div>
         </form>
       </div>
     </section>
