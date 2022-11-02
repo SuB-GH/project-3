@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import Contact from '../Contact';
 
 function Nav(props) {
 
   const [navItems] = useState([
     { name: 'Search' },
-    { name: 'Books' },
     { name: 'About Us' },
     { name: 'Contact' },
     { name: 'Sign Up'}
   ]);
 
-  const { setOtherSelected, otherSelected } = props
+  const { setOtherSelected } = props
 
   const [currentNavItem, setCurrentNavItem] = useState(navItems[0])
 
