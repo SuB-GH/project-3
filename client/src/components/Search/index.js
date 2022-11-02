@@ -79,17 +79,16 @@ function Search() {
       <CardColumns className='book-container'>
         {searchedBooks.map((book) => {
           return (
-            <Card key={book.bookId} border='dark' className='book-card'>
-              <a href={`https://openlibrary.org/isbn/${book.isbn}`}>
-                <Card.Img id="card-img" src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`} alt={`The cover for ${book.title}`} variant='top' />
-              </a>
-              <Card.Body>
-                <Card.Title className='book-title'>{book.title}</Card.Title>
-                <p className='small'>{book.authors[0]}</p>
-                <Card.Text>{book.description}</Card.Text>
-
-              </Card.Body>
-            </Card>
+            <a key={book.bookId} href={`https://openlibrary.org/isbn/${book.isbn}`} className="book-height">
+              <Card  border='dark' className='book-card'>
+                <Card.Img className="card-img" src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`} alt={`The cover for ${book.title}`} variant='top' />
+                <Card.Body>
+                  <Card.Title className='book-title'>{book.title}</Card.Title>
+                  <p className='small'>{book.authors[0]}</p>
+                  <Card.Text>{book.description}</Card.Text>
+                </Card.Body>
+              </Card>
+            </a>
           );
         })}
       </CardColumns>

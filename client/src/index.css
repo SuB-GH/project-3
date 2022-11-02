@@ -118,6 +118,7 @@ nav ul li {
   margin: 10px;
   justify-content: center;
   cursor: pointer;
+  height: 100%;
 }
 
 .book-card {
@@ -125,10 +126,21 @@ nav ul li {
   margin: 10px 10px 10px 10px;
   width: 200px;
   border: 1px solid black;
+  height: 350px;
+  padding-top: 1rem;
+  
 }
 
-.book-title {
+.book-height {
+  height: 366px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
 
+.card-img {
+height: 225px;
+width: 150px;
 }
 
 /* About Styles */
