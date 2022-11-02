@@ -18,7 +18,7 @@ This ...
 
 
 
-![alt text]((assets/team-screenshot.png).png)
+![alt text](assets/team-screenshot.png)
 
 
 
