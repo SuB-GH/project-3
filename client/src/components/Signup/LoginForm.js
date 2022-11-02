@@ -85,7 +85,7 @@ const LoginForm = () => {
     }
   };
   return (
-    <form>
+    <div>
       <div className='login-card'>
         <h3>Log-In</h3>
         <div className='login-section'>
@@ -142,7 +142,7 @@ const LoginForm = () => {
         </Button>
       </Form>
     </>
-    </form>
+    </div>
   );
   
 };
