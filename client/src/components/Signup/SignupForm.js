@@ -100,20 +100,6 @@ export default Signup;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useState, useEffect } from 'react';
 // import { validateEmail } from '../../utils/helpers';
 // import { Form, Button, Alert } from 'react-bootstrap';
