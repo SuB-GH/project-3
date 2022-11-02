@@ -104,7 +104,6 @@ nav ul li {
 .location {
   width: 80%;
   padding: 12px;
-  border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 6px;
@@ -117,7 +116,19 @@ nav ul li {
   flex-wrap: wrap;
   flex-direction: row;
   margin: 10px;
-  border: 4px solid black;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.book-card {
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.book-title {
+
 }
 
 /* About Styles */
@@ -208,9 +219,6 @@ button[type=submit] {
 .submit:hover {
   color: black;
 }
-
-
-
 
 /* Sign Up and Log In Styles */
 

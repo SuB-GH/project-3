@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 function Search() {
 
-
   const [searchedBooks, setSearchedBooks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -49,11 +47,6 @@ function Search() {
 
   };
 
-
-  const newTab = (book) => {
-    window.open(`https://openlibrary.org/b/isbn/9780385533225`, '_blank').focus();
-  }
-
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark search-container'>
@@ -86,10 +79,10 @@ function Search() {
       <CardColumns className='book-container'>
         {searchedBooks.map((book) => {
           return (
-            <Card key={book.bookId} border='dark'>
-              <Card.Img src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`} alt={`The cover for ${book.title}`} variant='top' />
+            <Card key={book.bookId} border='dark' className='book-card' href={`https://covers.openlibrary.org/b/isbn/${book.isbn}`}>
+              <Card.Img id="card-img" src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`} alt={`The cover for ${book.title}`} variant='top' href={`https://openlibrary.org/b/isbn/${book.isbn}`}/>
               <Card.Body>
-                <Card.Title onclick={newTab()}>{book.title}</Card.Title>
+                <Card.Title className='book-title'>{book.title}</Card.Title>
                 <p className='small'>{book.authors[0]}</p>
                 <Card.Text>{book.description}</Card.Text>
 
