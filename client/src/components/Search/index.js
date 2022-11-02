@@ -3,91 +3,96 @@ import React, { useState } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 function Search() {
 
+  const [searchedBooks, setSearchedBooks] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
-    const [searchedBooks, setSearchedBooks] = useState([]);
-    const [searchInput, setSearchInput] = useState('');
-  
-  
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
-      if (!searchInput) {
-        return false;
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!searchInput) {
+      return false;
+    }
+
+    try {
+      const response = await fetch(
+        `https://openlibrary.org/search.json?place=${searchInput}`
+      );
+
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
       }
-  
-      try {
-        const response = await fetch(
-          `https://openlibrary.org/search.json?place=${searchInput}`
-        );
-  
-        if (!response.ok) {
-          throw new Error('Something went wrong!');
+
+      const items = await response.json()
+      console.log(items);
+
+
+      const bookData = items.docs.map((book) => ({
+        bookId: book.key,
+        authors: book.author_name || ['No author to display'],
+        title: book.title,
+        isbn: book.isbn && book.isbn[0]
+      })).filter((book) => {
+        if (book.isbn !== undefined) {
+          return true
+        } else {
+          return false
         }
-  
-        const  items  = await response.json()
-        console.log(items);
+      })
 
-  
-        const bookData = items.docs.map((book) => ({
-          bookId: book.key,
-          authors: book.author_name || ['No author to display'],
-          title: book.title,       
-          image: book.cover_i
-        }));
-  
-        setSearchedBooks(bookData);
-        console.log(bookData) 
-        setSearchInput('');
-      } catch (err) {
-        console.error(err);
-      }
-    };
+      setSearchedBooks(bookData);
+      console.log(bookData)
+    } catch (err) {
+      console.error(err);
+    }
+
+  };
+
   return (
     <>
-    <Jumbotron fluid className='text-light bg-dark search-container'>
-      <Container>
-        <h1 className='container-title'>Search Your Destination!</h1>
-        <Form onSubmit={handleFormSubmit} className='search-section'>
-          <Form.Row>
-            <Col xs={12} md={8}>
-              <Form.Control
-                name='searchInput'
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                type='text'
-                size='lg'
-                placeholder='Search for a book'
-              />
-            </Col>
-            <Col xs={12} md={4}>
-              <Button type='submit' variant='success' size='lg'>
-                Submit Search
-              </Button>
-            </Col>
-          </Form.Row>
-        </Form>
-      </Container>
-    </Jumbotron>
+      <Jumbotron fluid className='text-light bg-dark search-container'>
+        <Container>
+          <h1 className='container-title'>Search Your Destination!</h1>
+          <Form onSubmit={handleFormSubmit} className='search-section'>
+            <Form.Row>
+              <Col xs={12} md={8}>
+                <Form.Control
+                  name='searchInput'
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  type='text'
+                  size='lg'
+                  placeholder='Search for a book'
+                  id='form-textbox'
+                />
+              </Col>
+              <Col xs={12} md={4}>
+                <Button type='submit' variant='success' size='lg'>
+                  Submit Search
+                </Button>
+              </Col>
+            </Form.Row>
+          </Form>
+        </Container>
+      </Jumbotron>
 
-    
-    <CardColumns className='book-card'>
-          {searchedBooks.map((book) => {
-            return (
-              <Card key={book.bookId} border='dark'>
-                {book.cover_i ? (
-                  <Card.Img src={book.cover_i} alt={`The cover for ${book.title}`} variant='top' />
-                ) : null}
+
+      <CardColumns className='book-container'>
+        {searchedBooks.map((book) => {
+          return (
+            <a key={book.bookId} href={`https://openlibrary.org/isbn/${book.isbn}`} className="book-height">
+              <Card  border='dark' className='book-card'>
+                <Card.Img className="card-img" src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`} alt={`The cover for ${book.title}`} variant='top' />
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Written By: {book.authors[0]}</p>
+                  <Card.Title className='book-title'>{book.title}</Card.Title>
+                  <p className='small'>{book.authors[0]}</p>
                   <Card.Text>{book.description}</Card.Text>
-                 
                 </Card.Body>
               </Card>
-            );
-          })}
-        </CardColumns>
-  </>
+            </a>
+          );
+        })}
+      </CardColumns>
+    </>
   )
 }
 
