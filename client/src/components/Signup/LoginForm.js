@@ -1,5 +1,5 @@
 // see SignupForm.js for comments
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
@@ -65,8 +65,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div className='login-card'>
+    <form onSubmit={handleFormSubmit} className='login-card'>
         <h3>Log-In</h3>
         <div className='login-section'>
           <label htmlFor="email">Email address:</label>
@@ -82,7 +81,6 @@ const LoginForm = () => {
               </div>
             )}
         <button data-testid="button" type="submit" className='submit'>Submit</button>
-      </div>
     </form>
   );
 };
