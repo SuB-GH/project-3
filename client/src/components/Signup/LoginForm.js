@@ -1,70 +1,43 @@
 // see SignupForm.js for comments
 import React, { useState, useEffect } from 'react';
 import { validateEmail } from '../../utils/helpers';
-// import { Form, Button, Alert } from 'react-bootstrap';
-
-// import { useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../utils/mutations';
-// import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 const LoginForm = () => {
-  // const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  // const [validated] = useState(false);
-  // const [showAlert, setShowAlert] = useState(false);
-  // const [login, { error }] = useMutation(LOGIN_USER);
-
-  // useEffect(() => {
-  //   if (error) {
-  //     setShowAlert(true);
-  //   } else {
-  //     setShowAlert(false);
-  //   }
-  // }, [error]);
-
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({ ...userFormData, [name]: value });
-  // };
-
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   // check if form has everything (as per react-bootstrap docs)
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-
-  //   try {
-  //     const { data } = await login({
-  //       variables: { ...userFormData }
-  //     });
-
-  //     Auth.login(data.login.token);
-
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-
-  //   setUserFormData({
-  //     email: '',
-  //     password: '',
-  //   });
-  // };
+  const [loginFormState, setLoginFormState] = useState({ email: '', password: '' });
+  const [login] = useMutation(LOGIN_USER);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-
   const [errorMessage, setErrorMessage] = useState('');
-  const { name, email, message } = formState;
+ 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log('Submit Form', formState);
-    }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setLoginFormState({...loginFormState, [name]: value });
   };
 
-  const handleChange = (e) => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: { ...loginFormState }
+      });
+      Auth.login(data.login.token);
+    } catch (err) {
+      console.error(err);
+    }
+
+    setLoginFormState({
+      email: '',
+      password: '',
+    });
+  };
+
+  const handleBlur = (e) => {
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value);
       if (!isValid) {
@@ -85,16 +58,16 @@ const LoginForm = () => {
     }
   };
   return (
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <div className='login-card'>
         <h3>Log-In</h3>
         <div className='login-section'>
           <label htmlFor="email">Email address:</label>
-          <input type="login" name="email" defaultValue={email} onBlur={handleChange}/>
+          <input type="login" name="email" value={loginFormState.email} onBlur={handleBlur} onChange={handleChange}/>
         </div>
         <div className='login-section'>
           <label htmlFor="password">Password:</label>
-          <input type="login" name="password" defaultValue={email} onBlur={handleChange}/>
+          <input type="login" name="password" value={loginFormState.password} onBlur={handleBlur} onChange={handleChange}/>
         </div>
         {errorMessage && (
               <div>
