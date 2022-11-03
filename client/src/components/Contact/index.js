@@ -23,12 +23,15 @@ function Contact() {
     }
     if (!errorMessage) {
       setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log('Handle Form', formState);
+      
+      console.log(formState.name);
+      console.log(formState.email);
+      console.log(formState.message);
     }
   };
 
   const handleSubmit = (e) => {
-    window.location `mailto:koestreicher4@gmail.com from ${formState.name}&body=${formState.message}`
+    window.location `mailto:jathompson399@gmail.com?subject=message from ${formState.name}&body=${formState.message}`
   }
 
 
@@ -36,7 +39,7 @@ function Contact() {
     <section>
       <div className='contact-card'>
         <h1 data-testid="h1tag">Contact Us</h1>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
             <div className='contact-section'>
               <label htmlFor="name">Name:</label>
               <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
@@ -54,7 +57,7 @@ function Contact() {
                 <p className="error-text">{errorMessage}</p>
               </div>
             )}
-            <button data-testid="button" type="submit" className='submit' onSubmit={handleSubmit}>Submit</button>
+            <button data-testid="button" type="submit" className='submit'>Submit</button>
         </form>
       </div>
     </section>
