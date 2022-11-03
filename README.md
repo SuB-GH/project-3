@@ -15,6 +15,7 @@
   
   ## Usage:
   
+  Here is a link to the application: https://lit-taiga-03670.herokuapp.com/
   
 ## Technologies:
 React</br>
