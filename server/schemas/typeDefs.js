@@ -12,6 +12,12 @@ const typeDefs = gql`
     user: User
   }
 
+  type Contact {
+    name: String!
+    email: String!
+    message: String!
+  }
+
   type Query {
     me: User
     users: [User]

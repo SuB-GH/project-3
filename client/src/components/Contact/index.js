@@ -3,16 +3,8 @@ import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-
   const [errorMessage, setErrorMessage] = useState('');
   const { name, email, message } = formState;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log('Submit Form', formState);
-    }
-  };
 
   const handleChange = (e) => {
     if (e.target.name === 'email') {
@@ -34,11 +26,17 @@ function Contact() {
       console.log('Handle Form', formState);
     }
   };
+
+  const handleSubmit = (e) => {
+    window.location `mailto:koestreicher4@gmail.com from ${formState.name}&body=${formState.message}`
+  }
+
+
   return (
     <section>
       <div className='contact-card'>
         <h1 data-testid="h1tag">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form className="contact-form">
             <div className='contact-section'>
               <label htmlFor="name">Name:</label>
               <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
@@ -56,7 +54,7 @@ function Contact() {
                 <p className="error-text">{errorMessage}</p>
               </div>
             )}
-            <button data-testid="button" type="submit" className='submit'>Submit</button>
+            <button data-testid="button" type="submit" className='submit' onSubmit={handleSubmit}>Submit</button>
         </form>
       </div>
     </section>
