@@ -12,9 +12,9 @@
   ## Description:
   A travel companion app to help inspire users to select travel destinations.  Searching by a location will result in books (and eventually movies and news headlines) related to that location.</br>
   ## Installation:
-  clone the repo, then npm update, then npm start</br>
+  
   ## Usage:
-  A consumer product</br>
+  
   
 ## Technologies:
 React</br>
