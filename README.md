@@ -6,17 +6,16 @@
   1. [Description](#description)
   2. [Installation](#installation)
   3. [Usage](#usage)
-  4. [Contributions](#contribute)
+  4. [Technologies](#technologies)
+  5. [Screenshot](#screenshot)
+  6. [Credits](#credits)
   ## Description:
   A travel companion app to help inspire users to select travel destinations.  Searching by a location will result in books (and eventually movies and news headlines) related to that location.</br>
   ## Installation:
-  clone the repo, then npm update, then npm start</br>
-  ## Usage:
-  A consumer product</br>
   
-  ## Testing:
-  after using NPM Start - use the page and make sure books load</br>
-
+  ## Usage:
+  
+  
 ## Technologies:
 React</br>
 GraphQL</br>
@@ -34,4 +33,4 @@ Apollo
 
   ## For Questions, contact info is below:
   
-  2. Email: koestreicher4@gmail.com </br>
+  Email: koestreicher4@gmail.com </br>
