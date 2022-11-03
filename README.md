@@ -8,11 +8,7 @@
   1. [Description](#description)
   2. [Installation](#installation)
   3. [Usage](#usage)
-  4. [Credits](#credits)
-  5. [License](#license)
-  7. [Contributions](#contribute)
-  8. [Testing](#test)
-  9. [Questions](#questions)</br>
+  4. [Contributions](#contribute)
   ## Description:
   A travel companion app to help you choose a book for your travel</br>
   ## Installation:
