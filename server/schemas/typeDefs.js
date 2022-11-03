@@ -12,6 +12,12 @@ const typeDefs = gql`
     user: User
   }
 
+  type Contact {
+    name:
+    email:
+    message
+  }
+
   type Book {
     bookId: ID!
     authors: [String]
